@@ -23,12 +23,11 @@ public class updateClassAPP {
 
         JLabel title = new JLabel("FORM INPUT MAHASISWA", JLabel.CENTER);
         title.setFont(new Font("Arial", Font.BOLD, 16));
-        JPanel titlePanel = new JPanel();titlePanel.setBackground(Color.decode("#E2852E"));
+        JPanel titlePanel = new JPanel();titlePanel.setBackground(Color.decode("#ABE0F0"));
         titlePanel.add(title);
         frame.add(titlePanel, BorderLayout.NORTH);
 
         JPanel formPanel = new JPanel(new GridLayout(7,2));
-        formPanel.setBackground(Color.decode("#FFEE91"));
         formPanel.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 
 
