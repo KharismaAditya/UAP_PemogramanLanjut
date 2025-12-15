@@ -52,9 +52,6 @@ public class updateClassAPP {
                 String HARGA = HargaInput.getText();
                 double TOTAL = Double.parseDouble(STOK) * Double.parseDouble(HARGA);
 
-                if(STOK.equals("") ){STOK = model.getValueAt(row,2).toString();}
-                if(HARGA.equals("")){HARGA = model.getValueAt(row,3).toString();}
-
                 model.setValueAt(Double.parseDouble(STOK), row, 2);
                 model.setValueAt(Double.parseDouble(HARGA), row, 3);
                 model.setValueAt(TOTAL, row, 4);
