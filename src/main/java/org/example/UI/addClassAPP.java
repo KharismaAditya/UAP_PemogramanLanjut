@@ -15,10 +15,13 @@ import java.util.Locale;
 public class addClassAPP {
     private static String FILE_PATH = System.getProperty("user.dir") + "/src/main/java/DataBarang.csv";
     private static CSVutil CSVUtil;
+
+
     JTextField idInput = new JTextField();
     JTextField nameInput = new JTextField();
     JTextField stokInput = new JTextField();
     JTextField priceInput = new JTextField();
+    JButton addButton = new JButton("ADD");
 
 
     public void pane(DefaultTableModel model) {
@@ -46,7 +49,6 @@ public class addClassAPP {
         formPanel.add(priceInput);
         frame.add(formPanel, BorderLayout.CENTER);
 
-        JButton addButton = new JButton("ADD");
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBackground(Color.decode("#ABE0F0"));
         buttonPanel.add(addButton);

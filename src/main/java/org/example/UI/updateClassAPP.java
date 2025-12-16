@@ -10,9 +10,11 @@ import java.awt.*;
 public class updateClassAPP {
     private static String FILE_PATH = System.getProperty("user.dir") + "/src/main/java/DataBarang.csv";
     private static CSVutil CSVUtil;
-    JTextField NameInput = new JTextField();
+
+    JLabel title = new JLabel("FORM INPUT MAHASISWA", JLabel.CENTER);
     JTextField StokInput = new JTextField();
     JTextField HargaInput = new JTextField();
+    JButton updButton = new JButton("UPDATE");
 
     public void pane(DefaultTableModel model, int row)
     {
@@ -21,7 +23,6 @@ public class updateClassAPP {
         frame.setResizable(false);
         frame.setLayout(new BorderLayout());
 
-        JLabel title = new JLabel("FORM INPUT MAHASISWA", JLabel.CENTER);
         title.setFont(new Font("Arial", Font.BOLD, 16));
         JPanel titlePanel = new JPanel();titlePanel.setBackground(Color.decode("#ABE0F0"));
         titlePanel.add(title);
@@ -38,7 +39,6 @@ public class updateClassAPP {
         formPanel.add(HargaInput);
         frame.add(formPanel, BorderLayout.CENTER);
 
-        JButton updButton = new JButton("UPDATE");
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBackground(Color.decode("#ABE0F0"));
         buttonPanel.add(updButton);
