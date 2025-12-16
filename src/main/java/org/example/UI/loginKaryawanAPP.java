@@ -7,7 +7,7 @@ public class loginKaryawanAPP {
     private static String Cuser = "admin";
     private static String Cpw = "UMM1964";
 
-    static JLabel title = new JLabel("MANAJEMEN STOK BARANG", JLabel.CENTER);
+    static JLabel title = new JLabel("MANAJEMEN BARANG GUDANG", JLabel.CENTER);
     static JTextField username = new JTextField();
     static JPasswordField password = new JPasswordField();
     static JButton loginButton = new JButton("LOGIN");
