@@ -39,7 +39,6 @@ public class mainApp
         frame.setLayout(new BorderLayout());
         frame.setResizable(false);
 
-        String[] columns = {"ID","NAMA","STOK","HARGA","TOTAL(Rp)"};
 
         title.setFont(new Font("ARIAL",Font.BOLD,16));
         title.setHorizontalAlignment(JLabel.CENTER);
@@ -47,6 +46,7 @@ public class mainApp
         titlePanel.add(title);
         frame.add(titlePanel,BorderLayout.NORTH);
 
+        String[] columns = {"ID","NAMA","STOK","HARGA","TOTAL(Rp)"};
         MyTableModel model = new MyTableModel(columns);
         JTable table = new JTable(model);
         currentModel = model;
