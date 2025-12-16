@@ -14,6 +14,7 @@ public class MyTableModel extends DefaultTableModel {
             case 0 -> Integer.class;
             case 2 -> Integer.class;
             case 3 -> Double.class;
+            case 4 -> Double.class;
             default -> String.class;
         };
     }
