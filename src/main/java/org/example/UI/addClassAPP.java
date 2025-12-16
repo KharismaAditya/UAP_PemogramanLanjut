@@ -92,7 +92,7 @@ public class addClassAPP {
                 idInput.setText("");nameInput.setText("");stokInput.setText("");priceInput.setText("");
             }
         }catch(NumberFormatException ex){
-            JOptionPane.showMessageDialog(frame, "NILAI STOK DAN HARGA HARUS BERUPA ANGKA");
+            JOptionPane.showMessageDialog(frame, "NILAI STOK / HARGA HARUS BERUPA ANGKA");
             idInput.setText("");nameInput.setText("");stokInput.setText("");priceInput.setText("");
         }
     }
