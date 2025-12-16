@@ -7,6 +7,11 @@ public class loginKaryawanAPP {
     private static String Cuser = "admin";
     private static String Cpw = "UMM1964";
 
+    static JLabel title = new JLabel("MANAJEMEN STOK BARANG", JLabel.CENTER);
+    static JTextField username = new JTextField();
+    static JPasswordField password = new JPasswordField();
+    static JButton loginButton = new JButton("LOGIN");
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("APLIKASI MANAJEMEN STOK BARANG");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -14,17 +19,17 @@ public class loginKaryawanAPP {
         frame.setResizable(false);
 
         Panel panelTitle = new Panel(new FlowLayout());
-        JLabel title = new JLabel("MANAJEMEN STOK BARANG", JLabel.CENTER);panelTitle.add(title);
+        panelTitle.add(title);
         title.setFont(new Font("ARIAL",Font.BOLD,20));
 
         Panel panelForm = new Panel(new GridLayout(2,2));
         panelForm.add(new JLabel("USERNAME : "));
-        JTextField username = new JTextField();panelForm.add(username);
+        panelForm.add(username);
         panelForm.add(new JLabel("PASSWORD : "));
-        JPasswordField password = new JPasswordField();panelForm.add(password);
+        panelForm.add(password);
 
         Panel panelButton = new Panel(new FlowLayout());
-        JButton loginButton = new JButton("LOGIN");panelButton.add(loginButton);
+        panelButton.add(loginButton);
         panelButton.add(panelForm);
         frame.add(panelTitle,BorderLayout.NORTH);
         frame.add(panelForm,BorderLayout.CENTER);

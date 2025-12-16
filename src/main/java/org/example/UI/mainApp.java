@@ -16,6 +16,12 @@ public class mainApp
     private static String FILE_PATH = System.getProperty("user.dir") + "/src/main/java/DataBarang.csv";
     private static CSVutil CSVUtil;
 
+    static JLabel title = new JLabel("DAFTAR BARANG GUDANG");
+    static JButton btn1 = new JButton("ADD");
+    static JButton btn2 = new JButton("UPDATE");
+    static JButton btn3 = new JButton("DELETE");
+
+
     private static JLabel totalInventaris = new JLabel();
     private static DefaultTableModel currentModel;
 
@@ -35,7 +41,6 @@ public class mainApp
 
         String[] columns = {"ID","NAMA","STOK","HARGA","TOTAL(Rp)"};
 
-        JLabel title = new JLabel("DAFTAR BARANG GUDANG");
         title.setFont(new Font("ARIAL",Font.BOLD,16));
         title.setHorizontalAlignment(JLabel.CENTER);
         JPanel titlePanel = new JPanel();titlePanel.setBackground(Color.decode("#E2852E"));
@@ -74,9 +79,9 @@ public class mainApp
         JPanel panel2 = new JPanel();
         panel2.setBackground(Color.decode("#ABE0F0"));
         panel2.setLayout(new FlowLayout());
-        JButton btn1 = new JButton("ADD");panel2.add(btn1);
-        JButton btn2 = new JButton("UPDATE");panel2.add(btn2);
-        JButton btn3 = new JButton("DELETE");panel2.add(btn3);
+        panel2.add(btn1);
+        panel2.add(btn2);
+        panel2.add(btn3);
         mainPanel.add(panel2);
         frame.add(mainPanel,BorderLayout.SOUTH);
 
@@ -184,5 +189,4 @@ public class mainApp
             e.printStackTrace();
         }
     }
-    
 }
