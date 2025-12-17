@@ -37,6 +37,7 @@ public class addClassAPP {
         frame.setSize(400,300);
         frame.setResizable(false);
         frame.setLayout(new BorderLayout());
+        frame.setLocationRelativeTo(null);
 
         JLabel title = new JLabel("INPUT DATA BARANG", JLabel.CENTER);
         title.setFont(new Font("Arial", Font.BOLD, 16));
