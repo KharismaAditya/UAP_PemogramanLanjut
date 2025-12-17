@@ -11,7 +11,19 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-
+/**
+ * Kelas antarmuka untuk menambahkan data barang baru ke dalam tabel dan file CSV.
+ * Menyediakan form input ID, nama, stok, dan harga barang, lalu menghitung total
+ * nilai barang sebelum menyimpannya.
+ *
+ * Kelas ini menerima model tabel dari mainApp melalui method pane, kemudian
+ * menambahkan baris baru ke model jika data valid dan belum pernah ada
+ * berdasarkan kombinasi ID dan nama barang.
+ *
+ * Setelah data berhasil ditambahkan, kelas ini memanggil CSVutil.saveCSV
+ * untuk menyimpan perubahan ke file DataBarang.csv dan mainApp.updateTotalLabel
+ * untuk memperbarui total nilai inventaris di jendela utama.
+ */
 public class addClassAPP {
     private static String FILE_PATH = System.getProperty("user.dir") + "/src/main/java/DataBarang.csv";
     private static CSVutil CSVUtil;
@@ -44,6 +56,8 @@ public class addClassAPP {
         formPanel.add(new JLabel("NAMA:"));
         formPanel.add(nameInput);
         formPanel.add(new JLabel("STOK:"));
+
+
         formPanel.add(stokInput);
         formPanel.add(new JLabel("HARGA:"));
         formPanel.add(priceInput);

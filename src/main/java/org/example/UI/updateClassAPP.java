@@ -1,5 +1,6 @@
 package org.example.UI;
 
+
 import org.example.Table.MyTableModel;
 import org.example.util.CSVutil;
 
@@ -7,6 +8,26 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
+/**
+ * Kelas antarmuka untuk memperbarui data satu barang yang dipilih di tabel.
+ * Menampilkan form berisi informasi nama barang, stok lama, dan harga lama,
+ * serta field input untuk mengubah stok dan harga.
+ *
+ * Kelas ini menerima model tabel dan indeks baris yang akan diubah melalui
+ * method pane, kemudian menampilkan jendela terpisah dengan form update.
+ *
+ * Saat tombol UPDATE diklik, nilai stok dan harga baru diambil dari input,
+ * lalu total harga dihitung ulang sebagai hasil perkalian stok dan harga,
+ * kemudian ketiga nilai tersebut disimpan kembali ke baris terkait di model.
+ *
+ * Setelah data pada model diperbarui, kelas ini memanggil CSVutil.saveCSV
+ * untuk menyimpan perubahan ke file DataBarang.csv dan mainApp.updateTotalLabel
+ * untuk memperbarui label total nilai gudang di jendela utama.
+ *
+ * Jika pengguna memasukkan nilai yang bukan angka untuk stok atau harga,
+ * akan ditampilkan pesan kesalahan menggunakan JOptionPane agar user
+ * diberi tahu bahwa input harus berupa angka.
+ */
 public class updateClassAPP {
     private static String FILE_PATH = System.getProperty("user.dir") + "/src/main/java/DataBarang.csv";
     private static CSVutil CSVUtil;

@@ -11,6 +11,27 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+/**
+ * Kelas utama tampilan aplikasi manajemen stok barang gudang.
+ * Menyediakan jendela utama berisi tabel daftar barang beserta fitur
+ * pencarian, penambahan, pembaruan, dan penghapusan data.
+ *
+ * Aplikasi membaca data barang dari file CSV, menampilkannya dalam JTable
+ * dengan model khusus MyTableModel, lalu menghitung total nilai inventaris
+ * berdasarkan harga dan stok setiap barang.
+ *
+ * Tombol ADD akan membuka form untuk menambah data barang baru, tombol
+ * UPDATE membuka form pembaruan data barang yang dipilih, sedangkan
+ * tombol DELETE menghapus baris yang dipilih dari tabel dan file CSV.
+ *
+ * Fitur pencarian menggunakan TableRowSorter dan RowFilter sehingga
+ * pengguna dapat memfilter data barang secara dinamis berdasarkan teks
+ * yang diketik di field pencarian.
+ *
+ * Kelas ini juga menyediakan method utilitas seperti totalGudang untuk
+ * menghitung total nilai gudang dan loadCSV untuk memuat data dari file
+ * CSV ke dalam model tabel.
+ */
 public class mainApp
 {
     private static String FILE_PATH = System.getProperty("user.dir") + "/src/main/java/DataBarang.csv";
