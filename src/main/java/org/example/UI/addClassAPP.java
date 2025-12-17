@@ -2,14 +2,10 @@ package org.example.UI;
 
 import org.example.Table.MyTableModel;
 import org.example.util.CSVutil;
-
-import javax.print.attribute.standard.MediaSize;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
+
 
 /**
  * Kelas antarmuka untuk menambahkan data barang baru ke dalam tabel dan file CSV.
