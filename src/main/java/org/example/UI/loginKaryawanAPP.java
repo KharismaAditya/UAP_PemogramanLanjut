@@ -1,8 +1,26 @@
 package org.example.UI;
 
+
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Kelas antarmuka login sederhana untuk aplikasi manajemen stok barang.
+ * Menyediakan form berisi input username dan password yang harus diisi
+ * karyawan sebelum dapat mengakses jendela utama aplikasi.
+ *
+ * Kredensial valid disimpan secara hardcode dalam variabel Cuser dan Cpw,
+ * yaitu username "admin" dan password "UMM1964", sehingga login hanya
+ * berhasil jika input pengguna cocok dengan nilai tersebut.
+ *
+ * Setelah login berhasil, kelas ini akan membuat instance mainApp dan
+ * memanggil method main() miliknya untuk menampilkan jendela utama,
+ * kemudian menutup (dispose) jendela login.
+ *
+ * Layout jendela login menggunakan kombinasi Panel dengan FlowLayout
+ * dan GridLayout untuk menata judul, field username, field password,
+ * serta tombol login agar tampilan rapi dan mudah digunakan.
+ */
 public class loginKaryawanAPP {
     private static String Cuser = "admin";
     private static String Cpw = "UMM1964";

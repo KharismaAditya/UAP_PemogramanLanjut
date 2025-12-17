@@ -1,10 +1,24 @@
 package org.example.util;
 
+
 import org.example.Table.MyTableModel;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+/**
+ * Kelas utilitas untuk operasi penyimpanan data tabel ke file CSV.
+ * Digunakan oleh form utama dan form update untuk menyimpan perubahan
+ * data barang ke file DataBarang.csv.
+ *
+ * Method saveCSV menulis ulang seluruh isi model tabel ke file CSV,
+ * dimulai dari header kolom hingga setiap baris data, dengan pemisah
+ * koma di antara nilai kolom.
+ *
+ * Kelas ini bekerja sama dengan MyTableModel sehingga struktur kolom
+ * dan data yang disimpan konsisten dengan tampilan tabel pada aplikasi
+ * Swing.
+ */
 public class CSVutil {
     public static void saveCSV(String path, MyTableModel model) {
         try (PrintWriter pw = new PrintWriter(new FileWriter(path))) {
