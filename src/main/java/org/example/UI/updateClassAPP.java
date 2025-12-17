@@ -43,13 +43,15 @@ public class updateClassAPP {
         frame.setSize(400,300);
         frame.setResizable(false);
         frame.setLayout(new BorderLayout());
+        frame.setLocationRelativeTo(null);
 
         title.setFont(new Font("Arial", Font.BOLD, 16));
-        JPanel titlePanel = new JPanel();titlePanel.setBackground(Color.decode("#ABE0F0"));
+        JPanel titlePanel = new JPanel();titlePanel.setBackground(Color.decode("#B8DB80"));
         titlePanel.add(title);
         frame.add(titlePanel, BorderLayout.NORTH);
 
-        JPanel formPanel = new JPanel(new GridLayout(7,2));
+        JPanel formPanel = new JPanel();
+        formPanel.setLayout(new BoxLayout(formPanel, BoxLayout.Y_AXIS));
         formPanel.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 
 
@@ -61,7 +63,7 @@ public class updateClassAPP {
         frame.add(formPanel, BorderLayout.CENTER);
 
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setBackground(Color.decode("#ABE0F0"));
+        buttonPanel.setBackground(Color.decode("#B8DB80"));
         buttonPanel.add(updButton);
         frame.add(buttonPanel, BorderLayout.SOUTH);;
         frame.setVisible(true);

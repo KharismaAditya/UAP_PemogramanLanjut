@@ -59,6 +59,7 @@ public class mainApp
         frame.setSize(800,500);
         frame.setLayout(new BorderLayout());
         frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
 
 
         title.setFont(new Font("ARIAL",Font.BOLD,16));
@@ -166,10 +167,8 @@ public class mainApp
                 return;
             }
             int modelRow = table.convertRowIndexToModel(viewRow);
-            model.removeRow(modelRow);
-            CSVUtil.saveCSV(FILE_PATH, model);
-            updateTotalLabel();
-            JOptionPane.showMessageDialog(frame, "Data berhasil dihapus!");
+            deleteClassAPP deletePane = new deleteClassAPP();
+            deletePane.pane(model, modelRow);
         });
     }
 
