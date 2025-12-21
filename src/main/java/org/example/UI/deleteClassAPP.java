@@ -1,6 +1,5 @@
 package org.example.UI;
 
-import org.example.Table.MyTableModel;
 import org.example.util.CSVutil;
 
 import javax.swing.*;
@@ -58,7 +57,7 @@ public class deleteClassAPP {
 
         delButton.addActionListener(e -> {
             model.removeRow(row);
-            CSVutil.saveCSV(FILE_PATH,(MyTableModel) model);
+            CSVutil.saveCSV(FILE_PATH,model);
             mainApp.updateTotalLabel();
             JOptionPane.showMessageDialog(frame,"Data berhasil dihapus!");
             frame.dispose();

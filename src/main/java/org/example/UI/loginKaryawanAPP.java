@@ -63,6 +63,8 @@ public class loginKaryawanAPP {
                 mainApp app = new  mainApp();
                 app.main();
                 frame.dispose();
+            }else{
+                JOptionPane.showMessageDialog(frame,"USER OR PASSWORD INCORRECT");
             }
         });
 

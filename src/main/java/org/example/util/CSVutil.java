@@ -1,8 +1,7 @@
 package org.example.util;
 
 
-import org.example.Table.MyTableModel;
-
+import javax.swing.table.DefaultTableModel;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
@@ -20,7 +19,7 @@ import java.io.PrintWriter;
  * Swing.
  */
 public class CSVutil {
-    public static void saveCSV(String path, MyTableModel model) {
+    public static void saveCSV(String path, DefaultTableModel model) {
         try (PrintWriter pw = new PrintWriter(new FileWriter(path))) {
             for (int i = 0; i < model.getColumnCount(); i++) {
                 pw.print(model.getColumnName(i));

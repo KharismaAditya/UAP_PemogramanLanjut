@@ -1,9 +1,6 @@
 package org.example.UI;
 
-
-import org.example.Table.MyTableModel;
 import org.example.util.CSVutil;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -70,15 +67,13 @@ public class updateClassAPP {
 
         updButton.addActionListener(e -> {
             try {
-                String STOK = StokInput.getText();
-                String HARGA = HargaInput.getText();
-                double TOTAL = Double.parseDouble(STOK) * Double.parseDouble(HARGA);
+                double TOTAL = Integer.parseInt(StokInput.getText()) * Integer.parseInt(HargaInput.getText());
 
-                model.setValueAt(Double.parseDouble(STOK), row, 2);
-                model.setValueAt(Double.parseDouble(HARGA), row, 3);
+                model.setValueAt(StokInput.getText(), row, 2);
+                model.setValueAt(HargaInput.getText(), row, 3);
                 model.setValueAt(TOTAL, row, 4);
 
-                CSVUtil.saveCSV(FILE_PATH, (MyTableModel) model);
+                CSVUtil.saveCSV(FILE_PATH,model);
                 mainApp.updateTotalLabel();
                 JOptionPane.showMessageDialog(frame, "Data berhasil diupdate!");
                 frame.dispose();

@@ -10,6 +10,8 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 /**
  * Kelas utama tampilan aplikasi manajemen stok barang gudang.
@@ -49,7 +51,11 @@ public class mainApp
     public static void updateTotalLabel() {
         if (currentModel != null && totalInventaris != null) {
             double total = totalGudang(currentModel);
-            totalInventaris.setText("TOTAL HARGA BARANG GUDANG : Rp." + total);
+            NumberFormat rupiah = NumberFormat.getInstance(new Locale("id", "ID"));
+            rupiah.setMaximumFractionDigits(0);
+            totalInventaris.setText(
+                    "TOTAL HARGA BARANG GUDANG : Rp. " + rupiah.format(total)
+            );
         }
     }
 
@@ -68,9 +74,13 @@ public class mainApp
         titlePanel.add(title);
         frame.add(titlePanel,BorderLayout.NORTH);
 
-        String[] columns = {"ID","NAMA","STOK","HARGA","TOTAL(Rp)"};
+        String[] columns = {"ID","NAMA","STOK","HARGA(Rp)","TOTAL(Rp)"};
         MyTableModel model = new MyTableModel(columns);
+
         JTable table = new JTable(model);
+        table.getTableHeader().setReorderingAllowed(false);
+        table.getTableHeader().setResizingAllowed(false);
+
         currentModel = model;
         TableRowSorter<DefaultTableModel> sorter =
                 new TableRowSorter<>(model);
@@ -198,9 +208,9 @@ public class mainApp
                 Object[] row = new Object[]{
                         Integer.parseInt(data[0]),
                         data[1],
-                        Double.parseDouble(data[2]),
+                        Integer.parseInt(data[2]),
                         Double.parseDouble(data[3]),
-                        Double.parseDouble(String.valueOf(total)),
+                        total,
                 };
 
                 model.addRow(row);

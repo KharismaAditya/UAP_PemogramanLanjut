@@ -1,6 +1,4 @@
 package org.example.UI;
-
-import org.example.Table.MyTableModel;
 import org.example.util.CSVutil;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -85,19 +83,16 @@ public class addClassAPP {
 
     public void addData(DefaultTableModel model, JFrame frame) {
         try{
-            int ID = Integer.parseInt(idInput.getText());
-            String NAMA = nameInput.getText();
-            double STOK = Double.parseDouble(stokInput.getText());
-            double HARGA = Double.parseDouble(priceInput.getText());
-            double TOTAL = STOK * HARGA;
-            if(isAlready(model,NAMA,idInput.getText())){
+            double TOTAL = Integer.parseInt(stokInput.getText()) * Integer.parseInt(priceInput.getText());
+            if(isAlready(model,nameInput.getText(),idInput.getText())){
                 model.addRow(new Object[]{
-                        ID,NAMA,STOK,HARGA,TOTAL
+                        idInput.getText(),nameInput.getText(),stokInput.getText(),priceInput.getText(),TOTAL
                 });
 
-                CSVUtil.saveCSV(FILE_PATH, (MyTableModel) model);
+                CSVUtil.saveCSV(FILE_PATH, model);
                 mainApp.updateTotalLabel();
                 JOptionPane.showMessageDialog(frame, "Data berhasil ditambah!");
+                frame.dispose();
             }else{
                 JOptionPane.showMessageDialog(frame, "Data yang anda masukkan sudah ada");
                 idInput.setText("");nameInput.setText("");stokInput.setText("");priceInput.setText("");
