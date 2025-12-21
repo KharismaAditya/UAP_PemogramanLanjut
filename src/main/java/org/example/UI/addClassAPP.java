@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
-
 /**
  * Kelas antarmuka untuk menambahkan data barang baru ke dalam tabel dan file CSV.
  * Menyediakan form input ID, nama, stok, dan harga barang, lalu menghitung total
