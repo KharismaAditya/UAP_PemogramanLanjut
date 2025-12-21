@@ -33,6 +33,8 @@ stok-barang/
         └── java/
             ├── org/
             │   └── example/
+            │       ├── Table/
+            │       │   ├── MyTableModel.java
             │       ├── UI/
             │       │   ├── loginKaryawanAPP.java
             │       │   ├── mainApp.java
