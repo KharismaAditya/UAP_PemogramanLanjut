@@ -37,6 +37,7 @@ stok-barang/
             │       │   ├── loginKaryawanAPP.java
             │       │   ├── mainApp.java
             │       │   ├── updateClassAPP.java
+            │       │   ├── deleteClassAPP.java
             │       │   └── addClassAPP.java
             │       └── util/
             │           └── CSVutil.java
